@@ -1,0 +1,6 @@
+2:ERROR: Unable to connect to the database.
+5:ERROR: DEBUG - Configuration settings could not be applied.
+8:ERROR: Failed to fetch data from API endpoint '/users'.
+10:ERROR: DEBUG - Query execution failed due to a syntax error.
+12:ERROR: Missing required parameter in the request.
+15:ERROR: DEBUG - Unexpected server response received.

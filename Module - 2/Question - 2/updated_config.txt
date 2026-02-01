@@ -1,0 +1,62 @@
+# Application Configuration File
+# Environment: Development
+
+server.name=dev-server
+server.host=127.0.0.1
+server.port=8080
+
+database.type=mysql
+database.host=127.0.0.1
+database.port=3306
+database.user=root
+database.password=root123
+
+# Backup database server
+database.backup.host=127.0.0.1
+database.backup.port=3307
+
+# Cache configuration
+cache.enabled=true
+cache.host=127.0.0.1
+cache.port=6379
+
+# Message broker settings
+broker.type=rabbitmq
+broker.host=127.0.0.1
+broker.port=5672
+
+# Logging service
+logging.level=DEBUG
+logging.host=127.0.0.1
+logging.port=9200
+
+# API Gateway
+gateway.url=http://127.0.0.1:9000/api
+gateway.timeout=30
+
+# Authentication service
+auth.service.url=http://127.0.0.1:7000/auth
+auth.token.expiry=3600
+
+# Microservices endpoints
+user.service.url=http://127.0.0.1:7100/users
+order.service.url=http://127.0.0.1:7200/orders
+payment.service.url=http://127.0.0.1:7300/payments
+
+# Monitoring and health check
+monitoring.enabled=true
+monitoring.endpoint=http://127.0.0.1:9100/metrics
+healthcheck.url=http://127.0.0.1:9200/health
+
+# External integrations (mock)
+external.mock.service1=http://127.0.0.1:8001/mock1
+external.mock.service2=http://127.0.0.1:8002/mock2
+
+# Repeated 127.0.0.1 entries for testing
+127.0.0.1 is used for local development
+127.0.0.1 should not be used in production
+replace 127.0.0.1 before deployment
+127.0.0.1 127.0.0.1 127.0.0.1
+
+# End of configuration file
+

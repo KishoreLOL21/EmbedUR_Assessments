@@ -1,0 +1,62 @@
+# Application Configuration File
+# Environment: Development
+
+server.name=dev-server
+server.host=localhost
+server.port=8080
+
+database.type=mysql
+database.host=localhost
+database.port=3306
+database.user=root
+database.password=root123
+
+# Backup database server
+database.backup.host=localhost
+database.backup.port=3307
+
+# Cache configuration
+cache.enabled=true
+cache.host=localhost
+cache.port=6379
+
+# Message broker settings
+broker.type=rabbitmq
+broker.host=localhost
+broker.port=5672
+
+# Logging service
+logging.level=DEBUG
+logging.host=localhost
+logging.port=9200
+
+# API Gateway
+gateway.url=http://localhost:9000/api
+gateway.timeout=30
+
+# Authentication service
+auth.service.url=http://localhost:7000/auth
+auth.token.expiry=3600
+
+# Microservices endpoints
+user.service.url=http://localhost:7100/users
+order.service.url=http://localhost:7200/orders
+payment.service.url=http://localhost:7300/payments
+
+# Monitoring and health check
+monitoring.enabled=true
+monitoring.endpoint=http://localhost:9100/metrics
+healthcheck.url=http://localhost:9200/health
+
+# External integrations (mock)
+external.mock.service1=http://localhost:8001/mock1
+external.mock.service2=http://localhost:8002/mock2
+
+# Repeated localhost entries for testing
+localhost is used for local development
+localhost should not be used in production
+replace localhost before deployment
+localhost localhost localhost
+
+# End of configuration file
+
