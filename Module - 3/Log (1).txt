@@ -1,0 +1,19 @@
+Count: 6
+Files in source:
+/home/kishore/Desktop/EmbedUR Linux Assessments/Module - 3/Arrays.sh
+/home/kishore/Desktop/EmbedUR Linux Assessments/Module - 3/Export_Child.sh
+/home/kishore/Desktop/EmbedUR Linux Assessments/Module - 3/Export_Parent.sh
+/home/kishore/Desktop/EmbedUR Linux Assessments/Module - 3/Program_1.sh
+/home/kishore/Desktop/EmbedUR Linux Assessments/Module - 3/Sample_new.sh
+/home/kishore/Desktop/EmbedUR Linux Assessments/Module - 3/Sample.sh
+Backup path exists
+Files in backup before copy:
+/home/kishore/Desktop/Arrays.sh
+/home/kishore/Desktop/Export_Child.sh
+/home/kishore/Desktop/Export_Parent.sh
+/home/kishore/Desktop/Program_1.sh
+/home/kishore/Desktop/Sample_new.sh
+/home/kishore/Desktop/Sample.sh
+Copying files...
+Backed Up Files Count: 6
+Total size of the backup dir: 1.3G	/home/kishore/Desktop
