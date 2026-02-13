@@ -1,0 +1,6 @@
+ERROR: Directory does not exist: home/kishore//Desktop/EmbedUR Linux Assessments/Module - 2
+ERROR: Directory does not exist: home/kishore/Desktop/Module - 2
+ERROR: Directory does not exist: home/kishore//Desktop/EmbedUR Linux Assessments/Module - 2
+ERROR: Directory does not exist: home/kishore/Desktop/EmbedUR Linux Assessments/Module - 2
+ERROR: Directory does not exist: home/kishore//Desktop/EmbedUR Linux Assessments/Module - 2
+ERROR: File does not exist: /home/kishore/EmbedUR Linux Assessments/Module - 2/config.txt

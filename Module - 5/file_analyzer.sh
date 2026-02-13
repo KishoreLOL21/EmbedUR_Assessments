@@ -1,7 +1,6 @@
 #!/bin/bash
 
-ERROR_LOG="errors.log"
-: > "$ERROR_LOG"   
+ERROR_LOG="errors_log.txt"   
 
 show_help() {
 cat << EOF
@@ -21,14 +20,13 @@ EOF
 }
 
 error() {
-    echo "ERROR: $1" | tee -a "$ERROR_LOG" >&2
+    echo "ERROR: $1" >&2
+    echo "ERROR: $1" >> "$ERROR_LOG"
 }
-
 
 valid_keyword() {
     [[ "$1" =~ [^[:space:]] ]]
 }
-
 
 search_recursive() {
     local dir="$1"
@@ -47,7 +45,6 @@ search_recursive() {
     done
 }
 
-
 while getopts ":d:k:f:-:" opt; do
     case "$opt" in
         d) DIRECTORY="$OPTARG" ;;
@@ -64,18 +61,17 @@ while getopts ":d:k:f:-:" opt; do
     esac
 done
 
-
 if [[ $# -eq 0 ]]; then
     error "No arguments provided"
     show_help
     exit 1
 fi
 
-
 if ! valid_keyword "$KEYWORD"; then
     error "Invalid or empty keyword"
     exit 1
 fi
+
 
 if [[ -n "$DIRECTORY" ]]; then
     if [[ ! -d "$DIRECTORY" ]]; then
@@ -84,7 +80,6 @@ if [[ -n "$DIRECTORY" ]]; then
     fi
     search_recursive "$DIRECTORY" "$KEYWORD"
 fi
-
 
 if [[ -n "$FILE" ]]; then
     if [[ ! -f "$FILE" ]]; then
@@ -98,7 +93,6 @@ if [[ -n "$FILE" ]]; then
         echo "Keyword not found in file: $FILE"
     fi
 fi
-
 
 echo "Script Name : $0"
 echo "Arguments Count : $#"
