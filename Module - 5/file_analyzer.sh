@@ -1,9 +1,8 @@
 #!/bin/bash
 
 ERROR_LOG="errors.log"
-: > "$ERROR_LOG"   # clear old errors
+: > "$ERROR_LOG"   
 
-# ---------- HELP MENU (HERE DOCUMENT) ----------
 show_help() {
 cat << EOF
 Usage: $0 [OPTIONS]
@@ -21,17 +20,16 @@ Examples:
 EOF
 }
 
-# ---------- ERROR HANDLER ----------
 error() {
     echo "ERROR: $1" | tee -a "$ERROR_LOG" >&2
 }
 
-# ---------- REGEX VALIDATION ----------
+
 valid_keyword() {
     [[ "$1" =~ [^[:space:]] ]]
 }
 
-# ---------- RECURSIVE FUNCTION ----------
+
 search_recursive() {
     local dir="$1"
     local keyword="$2"
@@ -49,7 +47,7 @@ search_recursive() {
     done
 }
 
-# ---------- GETOPTS ----------
+
 while getopts ":d:k:f:-:" opt; do
     case "$opt" in
         d) DIRECTORY="$OPTARG" ;;
@@ -66,20 +64,19 @@ while getopts ":d:k:f:-:" opt; do
     esac
 done
 
-# ---------- ARGUMENT CHECK ----------
+
 if [[ $# -eq 0 ]]; then
     error "No arguments provided"
     show_help
     exit 1
 fi
 
-# ---------- KEYWORD VALIDATION ----------
+
 if ! valid_keyword "$KEYWORD"; then
     error "Invalid or empty keyword"
     exit 1
 fi
 
-# ---------- DIRECTORY SEARCH ----------
 if [[ -n "$DIRECTORY" ]]; then
     if [[ ! -d "$DIRECTORY" ]]; then
         error "Directory does not exist: $DIRECTORY"
@@ -88,7 +85,7 @@ if [[ -n "$DIRECTORY" ]]; then
     search_recursive "$DIRECTORY" "$KEYWORD"
 fi
 
-# ---------- FILE SEARCH (HERE STRING) ----------
+
 if [[ -n "$FILE" ]]; then
     if [[ ! -f "$FILE" ]]; then
         error "File does not exist: $FILE"
@@ -102,9 +99,9 @@ if [[ -n "$FILE" ]]; then
     fi
 fi
 
-# ---------- SPECIAL PARAMETERS ----------
-echo "Script Name        : $0"
-echo "Arguments Count    : $#"
+
+echo "Script Name : $0"
+echo "Arguments Count : $#"
 echo "Arguments Provided : $@"
-echo "Last Exit Status   : $?"
+echo "Last Exit Status : $?"
 
